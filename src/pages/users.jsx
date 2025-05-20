@@ -31,7 +31,7 @@ const Users = () => {
     try {
       const token = localStorage.getItem("token");
       console.log("token is....",token)
-      const response = await axios.get("https://nh-admin-5.onrender.com/api/auth/getUsers", {
+      const response = await axios.get("https://nh-backend-3.onrender.com/api/auth/getUsers", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(response.data);
@@ -57,12 +57,12 @@ const Users = () => {
       };
 
       if (isEditMode && selectedUser) {
-        await axios.put(`https://nh-admin-5.onrender.com/api/auth/updateUser/${selectedUser._id}`, payload, {
+        await axios.put(`https://nh-backend-3.onrender.com/api/auth/updateUser/${selectedUser._id}`, payload, {
           headers: { Authorization: `Bearer ${token}` },
         });
         message.success("User updated successfully");
       } else {
-        await axios.post("https://nh-admin-5.onrender.com/api/auth/addUser", payload, {
+        await axios.post("https://nh-backend-3.onrender.com/api/auth/addUser", payload, {
           headers: { Authorization: `Bearer ${token}` },
         });
         message.success("User added successfully");
@@ -81,7 +81,7 @@ const Users = () => {
   const handleDeleteUser = async (userId) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`https://nh-admin-5.onrender.com/api/auth/deleteUser/${userId}`, {
+      await axios.delete(`https://nh-backend-3.onrender.com/api/auth/deleteUser/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       message.success("User deleted successfully");
