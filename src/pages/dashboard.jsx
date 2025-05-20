@@ -26,7 +26,7 @@ const Dashboard = () => {
     const fetchReports = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:5001/api/auth/getLocation", {
+        const response = await axios.get("https://nh-admin-5.onrender.com/api/auth/getLocation", {
           headers: { "Content-Type": "application/json" },
         });
         if (response.status === 200) {

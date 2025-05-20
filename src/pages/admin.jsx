@@ -12,6 +12,7 @@ import { Layout, Menu, theme, Modal } from "antd";
 import { useNavigate } from "react-router";
 import logo from "../assets/images/logo.jpeg";
 // import "../admin.css"
+
 import Users from "./users";
 import Report from "./reports";
 import Dashboard from "./dashboard";
